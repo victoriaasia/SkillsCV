@@ -1,0 +1,197 @@
+// stylelint-disable at-rule-empty-line-before
+
+@import "functions";
+@import "mixins";
+@import "variables";
+@import "sprites";
+@import "fonts";
+@import "myroundslider";
+@import "vendor";
+@import "base";
+
+@include foundation-everything;
+
+body {
+  background: $basic1;
+  font-family: "rob-reg";
+}
+
+input {
+  outline: none;
+	position: relative;
+
+	&::-webkit-inner-spin-button, &::-webkit-clear-button  {
+		display: none;
+	}
+
+	&::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background: transparent;
+		color: transparent;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+[type="text"], [type="date"] {
+  border: 0;
+  border-bottom: 3px solid $color-black;
+  padding: 0;
+  box-shadow: none !important;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: $basic2;
+  background: transparent !important;
+  transition: all 1s ease;
+
+  &::placeholder {
+    color: $basic2;
+  }
+
+  &:focus {
+    border: inherit;
+    border-bottom: 3px solid $active;
+    box-shadow: inherit;
+    color: lighten($basic2, 30%);
+    background: inherit;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:not(last-child){
+    margin: 0 0 1.5rem;
+  }
+}
+
+[type="checkbox"] {
+  display: none;
+
+  &:checked+label{
+    &::before  {
+      background: $active;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &+ label {
+    position: relative;
+    margin: 0 0 0 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 7px;
+      left: -28px;
+      display: inline-block;
+      border-radius: 5px;
+      width: 20px;
+      height: 20px;
+      background: $basic1;
+      transition: background 1s ease;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: -24px;
+      top: 11px;
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      background: url("../images/check.png") no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+  }
+}
+
+.is-browser-safari {
+  .large-up-4>.cell {
+    flex: 1 0 auto;
+    float: left;
+  }
+}
+
+.main {
+  max-width: 795px;
+  overflow: hidden;
+  padding: 5vw 0;
+}
+
+.block {
+  margin-bottom: 3px;
+  padding: 2rem 1.5rem;
+  background: url("../images/back.jpg");
+  background-size: cover;
+  overflow: hidden;
+
+  &__title {
+    font-family: "rob-med";
+    font-size: 20px;
+  }
+}
+
+.user {
+
+  &__pic {
+    padding-right: 25px;
+    @include bp-mobile {
+      padding-right: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      right: -17px;
+      bottom: 0;
+      background: url('../images/stamp.png') no-repeat;
+      background-size: contain;
+      width: 220px;
+      height: 200px;
+      @include bp-mobile {
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+  }
+
+  .userpic {
+    overflow: hidden;
+    border-radius: 100%;
+  }
+}
+
+.skills {
+  &__item {
+    overflow: hidden;
+  }
+}
+
+.js {
+  padding: 4.5rem 1.5rem;
+
+  &__info {
+    padding-left: 10px;
+    @include bp-tablet {
+      padding-left: 0px;
+      padding-top: 10vw;
+    }
+    @include bp-mobile {
+      padding-top: 100px;
+      text-align: center;
+    }
+  }
+}

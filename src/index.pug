@@ -1,0 +1,64 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page-index')
+
+block content
+	.grid-container.main
+		.grid-x.block.user
+			.cell.small-12.medium-3.user__pic
+				.userpic
+					img(src='images/pic.jpg' alt='')
+			.cell.small-12.medium-9.user__info
+				input(type='text' placeholder='Виктория' name='name')
+				input(type='date' data-date='' data-date-format='DD MMMM YYYY' value='1990-01-30')
+				input(type='text' placeholder='Санкт-Петербург' name='city')
+				input(type='text' placeholder='yes.im@bk.ru' name='contacts')
+
+		.grid-y.block
+			h2.block__title Навыки
+			.grid-x.skills.small-up-1.medium-up-3.large-up-4.grid-padding-y
+				.cell.skills__item
+					input(type='checkbox' id='html5' checked  disabled)
+					label(for='html5') html5
+				.cell.skills__item
+					input(type='checkbox' id='sass' checked)
+					label(for='sass') sass
+				.cell.skills__item
+					input(type='checkbox' id='vanillajs' checked)
+					label(for='vanillajs') vanillajs
+				.cell.skills__item
+					input(type='checkbox' id='git' checked)
+					label(for='git') git
+				.cell.skills__item
+					input(type='checkbox' id='css3' checked)
+					label(for='css3') css3
+				.cell.skills__item
+					input(type='checkbox' id='less' checked)
+					label(for='less') less
+				.cell.skills__item
+					input(type='checkbox' id='angular' checked)
+					label(for='angular') angular
+				.cell.skills__item
+					input(type='checkbox' id='foundation' checked)
+					label(for='foundation') foundation
+				.cell.skills__item
+					input(type='checkbox' id='бэм' checked)
+					label(for='бэм') бэм
+				.cell.skills__item
+					input(type='checkbox' id='gulp' checked)
+					label(for='gulp') gulp
+				.cell.skills__item
+					input(type='checkbox' id='jquery' checked)
+					label(for='jquery') jquery
+				.cell.skills__item
+					input(type='checkbox' id='bootstrap' checked)
+					label(for='bootstrap') bootstrap
+
+		.grid-x.block.js
+			.cell.small-12.medium-6.js__slider
+				#jsslider.jsslider
+			.cell.small-12.medium-6.js__info
+				h2.block__title Мой уровень владения
+					br
+					| Java Script
