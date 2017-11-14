@@ -57,6 +57,7 @@
     "foundation-sites": "6.4.4-rc1",
     "gulp-cli": "1.4.0",
     "jquery-migrate": "3.0.1",
+    "jquery-ui": "1.12.1",    
     "normalize-css": "2.3.1",
     "svg4everybody": "2.1.9"
   }

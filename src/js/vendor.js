@@ -2,3 +2,4 @@
 // @include('bowser/bowser.js')
 // @include('svg4everybody/dist/svg4everybody.js')
 // @include('jquery/dist/jquery.js')
+// @include('jquery-ui/ui/widgets/datepicker.js')
