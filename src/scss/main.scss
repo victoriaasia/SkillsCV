@@ -8,12 +8,18 @@
 @import "myroundslider";
 @import "vendor";
 @import "base";
-
 @include foundation-everything;
 
 body {
   background: $basic1;
   font-family: "rob-reg";
+}
+
+.is-browser-safari {
+  .large-up-4>.cell {
+    flex: 1 0 auto;
+    float: left;
+  }
 }
 
 input {
@@ -34,7 +40,6 @@ input {
 		height: 100%;
 	}
 }
-
 
 [type="text"], [type="date"] {
   border: 0;
@@ -72,9 +77,11 @@ input {
   display: none;
 
   &:checked+label{
+
     &::before  {
       background: $active;
     }
+
     &::after {
       opacity: 1;
     }
@@ -115,13 +122,6 @@ input {
   }
 }
 
-.is-browser-safari {
-  .large-up-4>.cell {
-    flex: 1 0 auto;
-    float: left;
-  }
-}
-
 .main {
   max-width: 795px;
   overflow: hidden;
@@ -145,13 +145,14 @@ input {
 
   &__pic {
     padding-right: 25px;
-    @include bp-mobile {
+    @include bp-tablet {
       padding-right: 0;
     }
   }
 
   &__info {
     position: relative;
+
     &::after {
       position: absolute;
       content: '';
